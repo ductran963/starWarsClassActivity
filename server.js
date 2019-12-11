@@ -71,24 +71,24 @@ app.get("/api/characters/:character", function(req, res) {
 });
 
 // Create New Characters - takes in JSON input
-// app.post("/api/characters", function(req, res) {
-//   // req.body hosts is equal to the JSON post sent from the user
-//   // This works because of our body parsing middleware
-//   var newCharacter = req.body;
+app.post("/api/characters", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user
+  // This works because of our body parsing middleware
+  var newCharacter = req.body;
 
-//   // Using a RegEx Pattern to remove spaces from newCharacter
-//   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-//   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+  // Using a RegEx Pattern to remove spaces from newCharacter
+  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+  newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
 
-//   console.log(newCharacter);
+  console.log(newCharacter);
 
-//   characters.push(newCharacter);
+  characters.push(newCharacter);
 
-//   res.json(newCharacter);
-// });
+  res.json(newCharacter);
+});
 
-// // Starts the server to begin listening
-// // =============================================================
-// app.listen(PORT, function() {
-//   console.log("App listening on PORT " + PORT);
-// });
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
+});
